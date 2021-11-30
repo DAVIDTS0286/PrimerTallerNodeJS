@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+  <title>BOLOS LOCOS</title>
+</head>
+
+<body>
+  <div class="card-header">
+    
+    <a class="navbar-brand" href="/"><h1 style="text-align: center;"><button type="button" class="btn btn-light" >BOLOS LOCOS</button></h1></a>
+    <STYLE type="text/css">
+      H1 { text-align: center}
+     </STYLE>
+</div>
+
+<div> <p style="text-align: center;">Bienvenido al sistema de asignacion de canchas y elementos de la bolera BOLOS LOCOS <br>
+    en este apartado podra acceder a las pistas que ofrece el establecimiento por medio <br> 
+    de una tabla, con el boton "Asignar pista" podra asignar pista a los usuarios.
+  </p>
+  </div>
+  <div class="container">
+    <!--<a href="/asignar" class="btn btn-outline-primary mt-4"><i class='bx bxs-plus-circle bx-md'></i></a>-->
+
+    <a href="/asignar"> <button type="button" class="btn btn-dark">Asignar pista </button></a>
+    <%if(arreglo.length){%>
+      <table class="table table-striped table-bordered mt-4">
+        <thead>
+          <th scope="col">NOMBRE EQUIPO</th>
+          <th scope="col"># DE USUARIOS</th>
+          <th scope="col"># PISTA</th>
+          <th scope="col">OPCIONES</th>
+
+        </thead>
+        <tbody>
+          <% arreglo.forEach(({cliente,tejo,cancha,id})=>{%>
+            <tr>
+              <td>
+                <%= cliente %>
+              </td>
+              <td>
+                <%= tejo %>
+              </td>
+              <td>
+                <%= cancha %>
+              </td>
+              <td>
+                <a href=<%='/editar/' +id %>  <button type="button" class="btn btn-warning">Editar pista</button></a>
+              
+                <a href=<%='/entregado/' +id %>  <button type="button" class="btn btn-danger">Servicio completo</button></a>
+              </td>
+            </tr>
+            <%})%>
+        </tbody>
+
+      </table>
+      <%}else{%>
+        <script>
+          alert('LAS PISTAS SE ENCUENTRAN LIBRES');
+
+        </script>
+        <h5 style="text-align: center;">Añade una para visualizar</h5>
+        <%}%>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
