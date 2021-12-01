@@ -1,5 +1,3 @@
 # Primer Taller -NODEJS, EXPRESS, EJS
 DAVID TAMAYO 
 CRUD - SIMULADOR DE BOLERA
-
-node app.js
