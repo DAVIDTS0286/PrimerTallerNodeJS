@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use('/', require('./src/routes/routes'))
+app.use('/', require('./src/routes/rutas'))
 app.listen(3000, () => {
     console.log('Run in http://localhost:3000')
 });
